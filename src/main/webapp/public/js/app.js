@@ -16,7 +16,7 @@ webcApp.config(['$routeProvider',
         templateUrl: 'partials/user-list.html',
         controller: 'UserListCtrl'
       }).
-      when('/users/:userId', {
+      when('/users/:id/', {
         templateUrl: 'partials/user-detail.html',
         controller: 'UserDetailCtrl'
       }).

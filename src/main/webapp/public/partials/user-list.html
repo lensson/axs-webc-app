@@ -1,28 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
 
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="description">Newest</option>
-      </select>
-
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
-
-      <ul class="phones">
-        <li ng-repeat="user in users | filter:query | orderBy:orderProp" class="thumbnail">
-
-		<a href="#/users/{{user.id}}">{{user.name}}</a>
-          <p>{{user.description}}</p>
-	
-        </li>
-      </ul>
-
-    </div>
-  </div>
+<div class="row">
+	<div class="col-md-6">
+		<p>User in System:</p>
+		<table class="table table-condensed table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="user in users | orderBy:['id', 'name']">
+					<td>{{ user.id }}</td>
+					<td>{{ user.name}}</td>
+					<td>{{ user.description}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" class="btn btn-default"
+			data-ng-click="openNewUserDlg();">New User</button>
+	</div>
 </div>
