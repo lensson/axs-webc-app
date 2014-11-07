@@ -4,6 +4,7 @@
 
 var webcApp = angular.module('webcApp', [
   'ngRoute',
+  'ui.bootstrap', 
   'webcControllers',
   'webcFilters',
   'webcServices'

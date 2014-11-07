@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class NewUserCmd {
 
     @NotBlank
-    @Size(max = 255)
+    @Size(max = 10)
     private String name;
 
 
@@ -26,7 +26,7 @@ public class NewUserCmd {
     }
 
     @NotBlank
-    @Size(max = 6)
+    @Size(max = 255)
     private String description;
 
 
